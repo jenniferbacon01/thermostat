@@ -1,9 +1,14 @@
-var Thermostat = function(temperature = 20, mintemp = 10){
+var Thermostat = function(temperature = 20, mintemp = 10, maxtemp = 25){
+
   this.temperature = temperature;
-  this.mintemp = mintemp;
+  this.minTemp = mintemp;
+  this.maxTemp = maxtemp;
+  this.powerDefaultMode = 'Power saving mode on';
+
   this.up = function (number){
     this.temperature += number;
   };
+
   this.down = function (number){
     if (this.temperature - number < 10) {
       throw 'cannot decrease temperature lower than min';
@@ -11,6 +16,15 @@ var Thermostat = function(temperature = 20, mintemp = 10){
       this.temperature -= number;
     };
   };
+
+  this.powerSaveOff = function() {
+    this.maxTemp = 32;
+  };
+
+  this.powerSaveOn = function() {
+    this.maxTemp = 25;
+  };
+
 };
 
 // Thermostat.prototype.up = function(degrees) {
