@@ -39,12 +39,25 @@ describe('Thermostat', function() {
 
   it('power saving mode on by defualt', function() {
     expect(thermostat.powerDefaultMode).toBe('Power saving mode on')
-  }); 
+  });
 
   it('can turn power save back on', function() {
     thermostat.powerSaveOff();
     thermostat.powerSaveOn();
     expect(thermostat.maxTemp).toBe(25)
-  }); 
+  });
+
+  it('temperature can be reset to start temp', function() {
+    thermostat.up(3);
+    thermostat.resetTemp();
+    expect(thermostat.temperature).toBe(20)
+  });
+
+  it('energy usage is low when temp < 18', function() {
+    thermostat.down(3);
+    console.log( thermostat.temperature < 18);
+    console.log( thermostat.energyUsage());
+    expect(thermostat.energyUsage()).toContain('low')
+  });
 
 });

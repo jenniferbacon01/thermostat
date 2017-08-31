@@ -25,6 +25,16 @@ var Thermostat = function(temperature = 20, mintemp = 10, maxtemp = 25){
     this.maxTemp = 25;
   };
 
+  this.resetTemp = function() {
+    this.temperature = 20;
+  };
+
+  this.energyUsage = function() {
+    if (this.temperature < 18) {
+      return 'low';
+    };
+  };
+
 };
 
 // Thermostat.prototype.up = function(degrees) {
