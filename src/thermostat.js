@@ -40,8 +40,16 @@ var Thermostat = function(temperature = 20, mintemp = 10, maxtemp = 25){
   };
 
 };
+// $("p").css("background-color", "yellow")
+$("p").css({"background-color": "yellow", "font-size": "200%"});
+// $( "temperature-up" ).slideUp( 800 );
+$("temperature-up").click(function(){
+    var txt = "";
+    txt += "Width: " + $("#div1").width() + "</br>";
+    txt += "Height: " + $("#div1").height();
+    $("#div1").html(txt);
+});
 
-// $( "p" ).slideUp( 800 );
 
 // Thermostat.prototype.up = function(degrees) {
 //   this.temperature += number;
