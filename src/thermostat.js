@@ -41,6 +41,8 @@ var Thermostat = function(temperature = 20, mintemp = 10, maxtemp = 25){
 
 };
 
+// $( "p" ).slideUp( 800 );
+
 // Thermostat.prototype.up = function(degrees) {
 //   this.temperature += number;
 // };
