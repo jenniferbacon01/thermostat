@@ -32,6 +32,10 @@ var Thermostat = function(temperature = 20, mintemp = 10, maxtemp = 25){
   this.energyUsage = function() {
     if (this.temperature < 18) {
       return 'low';
+    }else if (this.temperature < 25 ){
+      return 'medium';
+    }else{
+      return 'high';
     };
   };
 

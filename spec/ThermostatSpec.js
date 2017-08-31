@@ -55,9 +55,17 @@ describe('Thermostat', function() {
 
   it('energy usage is low when temp < 18', function() {
     thermostat.down(3);
-    console.log( thermostat.temperature < 18);
-    console.log( thermostat.energyUsage());
     expect(thermostat.energyUsage()).toContain('low')
   });
+
+  it('energy usage is medium when 18 <= temp  < 25', function() {
+    expect(thermostat.energyUsage()).toContain('medium')
+  });
+
+  it('energy usage is high when temp  >= 25', function() {
+    thermostat.up(5);
+    expect(thermostat.energyUsage()).toContain('high')
+  });
+
 
 });
