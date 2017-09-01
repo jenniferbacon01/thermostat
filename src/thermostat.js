@@ -1,28 +1,35 @@
-var Thermostat = function(temperature = 20, mintemp = 10, maxtemp = 25){
+var Thermostat = function(temperature = 20, mintemp = 10, maxtemp = 25, powermode = 'On'){
 
   this.temperature = temperature;
   this.minTemp = mintemp;
   this.maxTemp = maxtemp;
-  this.powerDefaultMode = 'Power saving mode on';
+  // this.powerDefaultMode = 'Power saving mode on';
+  this.powerMode = powermode;
 
   this.up = function () {
-    this.temperature ++ ;
+    if (this.temperature >= this.maxTemp) {
+      throw 'cannot increase temperature higher than max';
+    } else {
+      this.temperature ++;
+    };
   };
 
-  this.down = function (number){
-    if (this.temperature - number < 10) {
+  this.down = function (){
+    if (this.temperature <= this.minTemp) {
       throw 'cannot decrease temperature lower than min';
     } else {
-      this.temperature -= number;
+      this.temperature --;
     };
   };
 
   this.powerSaveOff = function() {
     this.maxTemp = 32;
+    this.powerMode = 'Off';
   };
 
   this.powerSaveOn = function() {
     this.maxTemp = 25;
+    this.powerMode = 'On';
   };
 
   this.resetTemp = function() {
