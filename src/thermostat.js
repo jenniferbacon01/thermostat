@@ -5,7 +5,7 @@ var Thermostat = function(temperature = 20, mintemp = 10, maxtemp = 25){
   this.maxTemp = maxtemp;
   this.powerDefaultMode = 'Power saving mode on';
 
-  this.up = function {
+  this.up = function () {
     this.temperature ++ ;
   };
 
@@ -40,6 +40,10 @@ var Thermostat = function(temperature = 20, mintemp = 10, maxtemp = 25){
   };
 
 };
+
+    // thermostat.temperature
+
+// $(":button").css("background-color", "green");
 
 // var thermostat = new Thermostat();
 // $('#temperature').text(thermostat.temperature);
