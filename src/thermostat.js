@@ -5,8 +5,8 @@ var Thermostat = function(temperature = 20, mintemp = 10, maxtemp = 25){
   this.maxTemp = maxtemp;
   this.powerDefaultMode = 'Power saving mode on';
 
-  this.up = function (number){
-    this.temperature += number;
+  this.up = function {
+    this.temperature ++ ;
   };
 
   this.down = function (number){
@@ -40,17 +40,16 @@ var Thermostat = function(temperature = 20, mintemp = 10, maxtemp = 25){
   };
 
 };
-// $("p").css("background-color", "yellow")
-$("p").css({"background-color": "yellow", "font-size": "200%"});
-// $( "temperature-up" ).slideUp( 800 );
-$("temperature-up").click(function(){
-    var txt = "";
-    txt += "Width: " + $("#div1").width() + "</br>";
-    txt += "Height: " + $("#div1").height();
-    $("#div1").html(txt);
-});
 
-
-// Thermostat.prototype.up = function(degrees) {
-//   this.temperature += number;
-// };
+// var thermostat = new Thermostat();
+// $('#temperature').text(thermostat.temperature);
+// // //
+// // // $("p").css({"background-color": "yellow", "font-size": "200%"});
+// $("#temperature-up" ).slideUp( 800 );
+// $("#temperature-down").click(function(){
+//     var txt = "";
+//     txt += "Width: " + $("#div1").width() + "</br>";
+//     txt += "Height: " + $("#div1").height();
+//     $("#div1").html(txt);
+// });
+//
